@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Praktikum 6 JavaScript DOM dan Event Handling, latihan E, mini project F, eksperimen G, evaluasi H.">
+  <title>Praktikum 6 | JavaScript DOM & Event Handling</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#beranda"><span class="brand-mark" aria-hidden="true">JS</span><span>Praktikum <strong>06</strong><small>Pemrograman Web · Pertemuan 7</small></span></a>
+      <nav aria-label="Navigasi bagian">
+        <a href="#bagian-e">Latihan E</a><a href="#bagian-f">Mini Project F</a><a href="#bagian-g">Eksperimen G</a><a href="#bagian-h">Evaluasi H</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container" id="beranda">
+    <section class="hero">
+      <div><p class="eyebrow">LAB6WEB / DOM & EVENT HANDLING</p><h1>JavaScript DOM <span>& Event Handling</span></h1>
+      <p>Latihan praktik pemilihan elemen, perubahan konten, event listener, validasi formulir, dan interaksi pengguna. Disusun sesuai Modul Praktikum 6 (Pertemuan 7).</p>
+      <div class="chips"><span>6 latihan</span><span>1 mini project</span><span>5 eksperimen</span><span>7 jawaban evaluasi</span></div></div>
+      <div class="hero-card" aria-label="Identitas praktikum"><p>DISUSUN OLEH</p><strong>Tedi Mulyadi</strong><span>NIM 312510163 · Kelas I251B</span><div class="hero-divider"></div><span>Teknik Informatika</span><span>Universitas Pelita Bangsa</span></div>
+    </section>
+    <section class="intro" aria-label="Persiapan bagian D">
+      <div class="section-heading compact"><div><span class="section-tag">BAGIAN D</span><h2>Persiapan Praktikum</h2></div></div>
+      <p>Folder proyek bernama <code>lab6_dom_event</code>. Struktur dipisah menjadi <code>index.html</code>, <code>style.css</code>, dan <code>script.js</code>; JavaScript dimuat melalui atribut <code>defer</code>. Buka halaman ini di browser dan tekan <kbd>F12</kbd> → <strong>Console</strong> untuk memeriksa hasil.</p>
+    </section>
+    <section id="bagian-e" class="page-section">
+      <div class="section-heading"><div><span class="section-tag">BAGIAN E</span><h2>Langkah Kerja Praktikum</h2><p>Enam latihan berdasarkan modul, lengkap dengan interaksi yang bisa dicoba.</p></div><span class="section-number">01 / 04</span></div>
+      <div class="exercise-grid">
+        <article class="panel" id="e1"><span class="step-label">LATIHAN 1</span><h3>Mengubah Teks dengan DOM</h3><p>Konten judul dan paragraf diubah menggunakan <code>getElementById()</code> dan <code>textContent</code>.</p>
+          <div class="demo"><h4 id="judul">Latihan DOM</h4><p id="pesan" class="notice">Belum ada tindakan.</p><button type="button" class="btn btn-outline" id="ubahPesan">Ubah ke kalimat lain</button></div>
+        </article>
+        <article class="panel" id="e2"><span class="step-label">LATIHAN 2</span><h3>Event Click dan Waktu</h3><p>Tombol menampilkan waktu klik menggunakan <code>addEventListener('click')</code>.</p>
+          <div class="demo"><button type="button" class="btn" id="tombolAksi">Klik Saya</button><p id="pesanKlik" class="notice" aria-live="polite">Belum ada tindakan klik.</p></div>
+        </article>
+        <article class="panel" id="e3"><span class="step-label">LATIHAN 3</span><h3>Mengubah Kelas CSS</h3><p>Tekan tombol berulang kali untuk menyalakan atau mematikan kelas <code>highlight</code> dan <code>teks-besar</code>.</p>
+          <div class="demo"><p id="teksGaya" class="style-example">Teks ini dapat berubah warna, latar, dan ukuran.</p><button type="button" class="btn" id="tombolGaya" aria-pressed="false">Aktifkan Gaya</button></div>
+        </article>
+        <article class="panel" id="e4"><span class="step-label">LATIHAN 4</span><h3>Event Input dan Jumlah Karakter</h3><p>Indikator mengikuti perubahan saat mengetik, menghapus, atau menempelkan teks.</p>
+          <div class="demo"><label for="namaInput">Nama (maksimal 40 karakter)</label><input type="text" id="namaInput" maxlength="40" placeholder="Ketik nama di sini"><p class="counter">Jumlah karakter: <strong id="jumlahKarakter">0</strong> / 40</p></div>
+        </article>
+        <article class="panel" id="e5"><span class="step-label">LATIHAN 5</span><h3>Validasi Form Pendaftaran</h3><p>Periksa nama, email, dan usia. Eksperimen G.2 menambahkan syarat nama minimal tiga karakter.</p>
+          <form class="form-stack" id="formPendaftaran" novalidate>
+            <div><label for="nama">Nama lengkap</label><input id="nama" name="nama" type="text" autocomplete="name" placeholder="Minimal 3 karakter"></div>
+            <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="nama@email.com"></div>
+            <div><label for="usia">Usia</label><input id="usia" name="usia" type="number" min="17" max="100" step="1" placeholder="17–100"></div>
+            <button class="btn" type="submit">Daftar</button><p id="pesanForm" class="feedback" aria-live="polite">Isi formulir untuk mencoba validasi.</p>
+          </form>
+        </article>
+        <article class="panel" id="e6"><span class="step-label">LATIHAN 6</span><h3>Daftar Tugas (To-do List)</h3><p>Tambahkan tugas, tandai selesai, batalkan selesai, dan hapus satu item (eksperimen G.1).</p>
+          <div class="demo"><label for="inputTugas">Tugas baru</label><div class="input-action"><input id="inputTugas" type="text" maxlength="100" placeholder="Contoh: Belajar DOM"><button id="tambahTugas" class="btn" type="button">Tambah</button></div><p id="pesanTugas" class="feedback" aria-live="polite">Belum ada tugas.</p><ul id="daftarTugas" class="todo-list" aria-label="Daftar tugas"></ul></div>
+        </article>
+      </div>
+    </section>
+    <section id="bagian-f" class="page-section">
+      <div class="section-heading"><div><span class="section-tag">BAGIAN F</span><h2>Mini Project — Pendaftaran Workshop</h2><p>Validasi, ringkasan input secara langsung, pilihan sesi, pesan sukses/gagal, dan reset.</p></div><span class="section-number">02 / 04</span></div>
+      <div class="workshop-grid"><article class="panel workshop-form">
+        <h3>Form Pendaftaran Workshop JavaScript</h3><p>Lengkapi seluruh data sebelum mengirim. Nama minimal 3 karakter sesuai G.2.</p>
+        <form id="formWorkshop" class="form-stack" novalidate>
+          <div><label for="workshopNama">Nama peserta</label><input id="workshopNama" type="text" maxlength="60" placeholder="Masukkan nama lengkap" autocomplete="name"><p class="input-hint">Karakter nama: <span id="workshopHitungNama">0</span> / 60</p></div>
+          <div><label for="workshopEmail">Alamat email</label><input id="workshopEmail" type="email" placeholder="nama@email.com" autocomplete="email"></div>
+          <div><label for="workshopSesi">Pilih sesi workshop</label><select id="workshopSesi"><option value="">-- Pilih sesi --</option><option value="Sesi Pagi (09.00–11.00)">Sesi Pagi (09.00–11.00)</option><option value="Sesi Siang (13.00–15.00)">Sesi Siang (13.00–15.00)</option><option value="Sesi Online (19.00–21.00)">Sesi Online (19.00–21.00)</option></select><p class="input-hint" id="infoSesi">Belum ada sesi dipilih.</p></div>
+          <div class="button-row"><button type="submit" class="btn">Kirim Pendaftaran</button><button type="reset" class="btn btn-outline" id="resetWorkshop">Reset Form</button></div>
+        </form><p id="pesanWorkshop" class="feedback" aria-live="polite">Lengkapi data untuk mendaftar.</p>
+      </article><aside class="panel summary-panel"><span class="step-label">LIVE PREVIEW</span><h3>Ringkasan Pendaftaran</h3><p>Ringkasan mengikuti event <code>input</code> dan <code>change</code>.</p><dl><div><dt>Nama</dt><dd id="ringkasanNama">—</dd></div><div><dt>Email</dt><dd id="ringkasanEmail">—</dd></div><div><dt>Sesi</dt><dd id="ringkasanSesi">Belum dipilih</dd></div></dl><div class="info-box">Form ini tidak mengirim data ke server. Pesan sukses menunjukkan validasi sisi browser berhasil.</div></aside></div>
+    </section>
+    <section id="bagian-g" class="page-section">
+      <div class="section-heading"><div><span class="section-tag">BAGIAN G</span><h2>Eksperimen Mandiri</h2><p>Lima pengembangan berdasarkan latihan dan mini project pada modul.</p></div><span class="section-number">03 / 04</span></div>
+      <div class="experiment-grid">
+        <article class="panel mini"><span class="step-label">G.1 · PENGHAPUSAN ITEM</span><h3>Hapus Satu Tugas</h3><p>Tiap item di Latihan 6 memiliki tombol <strong>Hapus</strong> yang menghapus hanya tugas tersebut. <a href="#e6">Coba di To-do List.</a></p></article>
+        <article class="panel mini"><span class="step-label">G.2 · NAMA MINIMAL 3</span><h3>Validasi Panjang Nama</h3><p>Nama kosong atau kurang dari 3 karakter ditolak pada form pendaftaran Latihan 5 dan workshop. <a href="#e5">Coba validasi.</a></p></article>
+        <article class="panel mini"><span class="step-label">G.3 · EVENT CHANGE</span><h3>Pilihan Sesi Dinamis</h3><p>Memilih opsi pada dropdown sesi workshop langsung memperbarui teks dan ringkasan sesi. <a href="#bagian-f">Coba pilih sesi.</a></p></article>
+        <article class="panel mini"><span class="step-label">G.4 · CLASS CSS</span><h3>Tampilkan / Sembunyikan</h3><p>Elemen disembunyikan atau ditampilkan kembali dengan <code>classList.toggle()</code>.</p><button id="tombolParagraf" class="btn btn-outline" type="button" aria-controls="paragrafEksperimen" aria-expanded="true">Sembunyikan Paragraf</button><p class="notice" id="paragrafEksperimen">Saya adalah paragraf yang dapat ditampilkan dan disembunyikan menggunakan kelas CSS.</p></article>
+        <article class="panel mini full"><span class="step-label">G.5 · HEAD TANPA DEFER</span><h3>Menguji Posisi Script dan <code>defer</code></h3><p>Untuk percobaan yang aman dan terpisah dari aplikasi utama, buka kedua file ini. Versi <strong>tanpa defer</strong> menjalankan JavaScript saat elemen HTML belum tersedia, sehingga pemilihan elemen mengembalikan <code>null</code> dan menyebabkan kesalahan. Versi <strong>dengan defer</strong> berhasil.</p><div class="button-row"><a class="btn btn-outline" href="eksperimen/g5_tanpa_defer.html" target="_blank" rel="noopener">Uji tanpa defer</a><a class="btn btn-outline" href="eksperimen/g5_dengan_defer.html" target="_blank" rel="noopener">Uji dengan defer</a></div><p class="input-hint">Catatan: error pada halaman percobaan tanpa defer memang disengaja untuk membuktikan G.5; aplikasi utama tetap berjalan tanpa error.</p></article>
+      </div>
+    </section>
+    <section id="bagian-h" class="page-section">
+      <div class="section-heading"><div><span class="section-tag">BAGIAN H</span><h2>Pertanyaan Evaluasi</h2><p>Jawaban ketujuh soal berdasarkan dasar teori dan hasil praktik.</p></div><span class="section-number">04 / 04</span></div>
+      <div class="qa-list">
+        <details open><summary>1. Apa yang dimaksud dengan DOM dan manfaatnya?</summary><p>DOM (Document Object Model) adalah representasi struktur HTML sebagai objek yang dapat diakses JavaScript. DOM memungkinkan program membaca dan mengubah teks, atribut, kelas CSS, serta menambahkan elemen dan merespons interaksi pengguna tanpa menulis ulang halaman.</p></details>
+        <details><summary>2. Perbedaan getElementById(), querySelector(), dan querySelectorAll()?</summary><p><code>getElementById('judul')</code> memilih elemen berdasarkan ID; <code>querySelector('.item')</code> memilih kecocokan pertama dari selector CSS; dan <code>querySelectorAll('.item')</code> menghasilkan kumpulan semua elemen yang cocok (NodeList).</p></details>
+        <details><summary>3. Apa fungsi addEventListener() dan tiga contoh event?</summary><p><code>addEventListener()</code> memasang fungsi penanganan ketika suatu event terjadi. Contohnya <code>click</code> saat tombol diklik, <code>input</code> saat isi kolom berubah, dan <code>submit</code> saat form dikirim. Contoh lain ialah <code>change</code>.</p></details>
+        <details><summary>4. Mengapa memakai event.preventDefault() pada submit?</summary><p>Karena perilaku default submit adalah mengirim form dan dapat memuat ulang atau berpindah halaman. <code>event.preventDefault()</code> menunda perilaku tersebut agar validasi JavaScript dijalankan dahulu dan pesan bisa ditampilkan.</p></details>
+        <details><summary>5. Perbedaan textContent dan innerHTML beserta keamanannya?</summary><p><code>textContent</code> memperlakukan masukan sebagai teks biasa, sehingga tag HTML tidak dieksekusi. <code>innerHTML</code> membaca atau mengubah markup HTML; jangan memasukkan teks pengguna tak tepercaya ke dalamnya karena berisiko injeksi HTML atau XSS.</p></details>
+        <details><summary>6. Bagaimana classList.toggle() mengubah tampilan?</summary><p><code>classList.toggle('highlight')</code> menambahkan kelas jika belum ada dan menghapusnya bila sudah ada. Aturan CSS kelas itu langsung memengaruhi tampilan, seperti pada latihan 3 dan eksperimen 4.</p></details>
+        <details><summary>7. Minimal tiga skenario pengujian validasi form?</summary><p>Contohnya (1) semua kolom kosong → pesan nama wajib diisi; (2) nama kurang dari 3 karakter → ditolak; (3) email tidak valid → ditolak; (4) usia 16 → ditolak; dan (5) nama, email, usia valid → sukses.</p></details>
+      </div>
+    </section>
+    <section class="intro bottom-note" aria-label="Bagian I pengumpulan"><div class="section-heading compact"><div><span class="section-tag">BAGIAN I</span><h2>Dokumentasi & Pengumpulan</h2></div></div><p>Proyek disiapkan untuk repository <code>Lab6Web</code>. Screenshot hasil ada di folder <code>screenshots/</code>, laporan Word dan jawaban evaluasi disertakan, serta petunjuk commit dan pengumpulan tersedia di <code>README.md</code>. Pembuatan repository daring dan pengiriman URL dilakukan setelah login ke GitHub dan e-learning.</p></section>
+  </main>
+  <footer class="site-footer"><div class="container">Praktikum 6 · JavaScript DOM dan Event Handling · Teknik Informatika, Universitas Pelita Bangsa · 2026</div></footer>
+</body>
+</html>

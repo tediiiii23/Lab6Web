@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eksperimen G.5 | Tanpa defer</title>
+  <link rel="stylesheet" href="../style.css">
+  <!-- Sengaja TANPA defer: JS diproses sebelum elemen <p> tersedia. -->
+  <script src="g5_demo.js"></script>
+</head>
+<body>
+  <main class="container" style="max-width:740px;margin:50px auto">
+    <article class="panel"><span class="step-label">EKSPERIMEN G.5 — TANPA DEFER</span><h1>Menjalankan script di head tanpa defer</h1>
+    <p id="demoTarget" class="notice">Teks awal: belum diubah.</p>
+    <p>Periksa <strong>F12 → Console</strong>. Script dijalankan sebelum elemen ini dibuat, sehingga <code>document.getElementById('demoTarget')</code> bernilai <code>null</code> dan muncul <code>TypeError</code> (sengaja).</p>
+    <p><a href="g5_dengan_defer.html">Bandingkan dengan versi defer</a> · <a href="../index.html#bagian-g">Kembali</a></p></article>
+  </main>
+</body>
+</html>
